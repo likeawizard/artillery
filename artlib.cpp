@@ -14,7 +14,7 @@ void welcomeText(){
     cout << "Welcome to Artillery.\n" <<
             "You are in the middle of a war and being charged by thousands of enemies.\n" <<
             "You have one cannon, which you can shoot at any angle.\n" << 
-            "You only have 10 cannonballs for this target..\n" <<
+            "You only have 10 shells for this target..\n" <<
             "Let's begin...\n\n" << endl;
     srand(time(NULL));
     return;

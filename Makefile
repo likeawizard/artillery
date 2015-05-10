@@ -1,12 +1,14 @@
+#Artillery alpha
 
-artillery : artillery.o artlib.o
-	g++ artillery.o artlib.o -o artillery
+OBJS = artillery.o artlib.o
+CC = g++
+CFLAGS = -g -std=c++11
 
-artillery.o : artillery.cpp artlib.h artlib.cpp
-	g++ -c artillery.cpp
+artillery : $(OBJS)
+	g++ $(OBJS) -o artillery
 
-artlib.o : artlib.cpp
-	g++ -c artlib.cpp
+artillery.o : artillery.cpp artlib.h Makefile
+	$(CC) $(CFLAGS) -c artillery.cpp
+artlib.o : artlib.cpp Makefile
+	$(CC) $(CFLAGS) -c artlib.cpp
 
-
-	
