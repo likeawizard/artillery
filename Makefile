@@ -3,7 +3,7 @@
 OBJS = artillery.o artlib.o
 CC = g++
 CFLAGS = -g -std=c++11
-
+$(info ========================COMPILING========================)
 artillery : $(OBJS)
 	g++ $(OBJS) -o artillery
 

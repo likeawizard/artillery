@@ -64,7 +64,7 @@ int readInt(std::string msg){
     int x;
     cout << msg;
     while(!(cin >> x)){
-        cout << "Please enter numbers only." << endl;
+        cout << "Please enter integers only." << endl;
         cin.clear();
         cin.ignore(10000,'\n');
         cout << msg;
