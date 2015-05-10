@@ -10,6 +10,10 @@
 #include <iomanip>  
 #include <cstdlib>
 #include "artlib.h"
+#include "artillery-gui.h"
+
+
+
 
 using namespace std;
 
@@ -17,6 +21,22 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+  
+  if( !Init() ) {
+    cout << "Failed to initialize SDL!" << endl;
+  } else {
+    if( !LoadMedia() ) {
+      cout << "Failed to load image!" << endl;
+    } else {
+      ApplyImage();
+    }
+  }
+  
+   Close();
+    
+  
+  return 0;
+  
   welcomeText();
 
   int enemies_killed = 0;
