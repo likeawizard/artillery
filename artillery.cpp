@@ -22,17 +22,23 @@ using namespace std;
  */
 int main(int argc, char** argv) {
   
-  if( !Init() ) {
+  ArtilleryGUI myGUI;
+  
+  if( !myGUI.Init() ) {
     cout << "Failed to initialize SDL!" << endl;
   } else {
-    if( !LoadMedia() ) {
+    if( !myGUI.LoadMedia() ) {
       cout << "Failed to load image!" << endl;
-    } else {
-      ApplyImage();
     }
   }
   
-   Close();
+  bool quit = false;
+  
+  while( !quit ) {
+   quit =  myGUI.EventHandler();
+  }
+  
+  myGUI.Close();
     
   
   return 0;
