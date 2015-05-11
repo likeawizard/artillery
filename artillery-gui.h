@@ -20,7 +20,7 @@ public:
   ArtilleryGUI();
   
   bool Init();
-  SDL_Surface* LoadSurface(std::string img_path);
+  SDL_Texture* LoadTexture(std::string img_path);
   bool LoadMedia();
   void ApplyImage();
   bool EventHandler();
@@ -28,28 +28,27 @@ public:
   
 private:
   
-  static const int kScreenWidth = 640;
-  static const int kScreenHeight = 480;
+  static const int kScreenWidth = 800;
+  static const int kScreenHeight = 600;
   
   enum KeyPressSurfaces{
-    KEY_PRESS_SURFACE_DEFAULT,
-    KEY_PRESS_SURFACE_UP,
-    KEY_PRESS_SURFACE_DOWN,
-    KEY_PRESS_SURFACE_LEFT,
-    KEY_PRESS_SURFACE_RIGHT,
-    KEY_PRESS_SURFACE_TOTAL,
+    KEY_PRESS_TEXTURE_DEFAULT,
+    KEY_PRESS_TEXTURE_UP,
+    KEY_PRESS_TEXTURE_DOWN,
+    KEY_PRESS_TEXTURE_LEFT,
+    KEY_PRESS_TEXTURE_RIGHT,
+    KEY_PRESS_TEXTURE_TOTAL,
   };
   
   //The window we'll be rendering to
-  SDL_Window* m_gWindow;
+  SDL_Window* m_Window;
+ 
+
+  SDL_Renderer* m_Renderer;
   
-  //The surface contained by the window
-  SDL_Surface* m_gScreenSurface;
+  SDL_Texture* m_Texture;
   
-  //The image we will load and show on the screen
-  SDL_Surface* m_gCurrentSurface;
-  
-  SDL_Surface* m_gKeyPressSurfaces[ KEY_PRESS_SURFACE_TOTAL ];
+  SDL_Texture* m_KeyPressTextures[ KEY_PRESS_TEXTURE_TOTAL ];
   
 };
 
